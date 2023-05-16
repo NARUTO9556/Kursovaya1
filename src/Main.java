@@ -1,5 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        int[] Employee = new int[10];
+        printSeparator();
+    }
+    public static void printSeparator() {
+        System.out.println("====================");
     }
 }
