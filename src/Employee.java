@@ -5,10 +5,7 @@ public class Employee {
     private int salary;
     static int counter = 1;
     int id = counter++;
-
-
-
-    public Employee(String employeeLastName, String employeeFirstName, String employeeMiddleName) {
+        public Employee(String employeeLastName, String employeeFirstName, String employeeMiddleName) {
         this.employeeLastName = employeeLastName;
         this.employeeFirstName = employeeFirstName;
         this.employeeMiddleName = employeeMiddleName;
@@ -33,11 +30,9 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-
     @Override
     public String toString() {
-        return " Фамилия = '" + employeeLastName + '\'' +
-                ", Имя = '" + employeeFirstName + '\'' +
-                ", Отчество = '" + employeeMiddleName + '\'';
+        return "Сотрудник = '"+ employeeLastName + ' ' + employeeFirstName + ' ' + employeeMiddleName + '\'';
     }
+
 }
