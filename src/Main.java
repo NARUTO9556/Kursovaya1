@@ -11,14 +11,13 @@ public class Main {
         System.out.println(employeeList[1]);
         employeeList[2] = new Employee(3, "Семенов Семен Семенович", 3, arr[2]);
         System.out.println(employeeList[2]);
+        System.out.println(Arrays.toString(arr));
         checkSpending();
         printSeparator();
         minMaxSpending();
         printSeparator();
         averageSpending();
         printSeparator();
-
-
     }
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
@@ -31,7 +30,7 @@ public class Main {
     private static void checkSpending() {
         int [] arr = generateRandomArray();
         int sum = 0;
-        for (int element: arr) {
+        for (int element:arr) {
             sum += element;
         }
         System.out.println(String.format("Сумма трат за месяц составила %s рублей", sum));
@@ -56,8 +55,8 @@ public class Main {
         for (int element: arr) {
             sum += element;
         }
-        int days = arr.length;
-        double averageSpending = (double) sum / days;
+        int salary = arr.length;
+        double averageSpending = (double) sum / salary;
         System.out.println(String.format("Средняя зарплата составила %s рублей", averageSpending));
     }
     public static void printSeparator() {
