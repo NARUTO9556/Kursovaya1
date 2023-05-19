@@ -1,9 +1,9 @@
 public class Main {
     public static Employee[] employeeList = new Employee[10];
     public static void main(String[] args) {
-        employeeList[0] = new Employee("Иванов Иван Иванович", 1, 25000, 1);
+        employeeList[0] = new Employee(1, "Иванов Иван Иванович", 25000, 1);
         System.out.println(employeeList[0]);
-        employeeList[1] = new Employee("Степанов Борис Андреевич", 2, 27000, 2);
+        employeeList[1] = new Employee(2, "Степанов Борис Андреевич", 27000, 2);
         System.out.println(employeeList[1]);
         printSeparator();
 
