@@ -1,63 +1,70 @@
-import java.util.Arrays;
-
 public class Main {
-    public static Employee[] employeeList = new Employee[10];
     public static void main(String[] args) {
-        int [] arr = generateRandomArray();
-        System.out.println(Arrays.toString(arr));
-        employeeList[0] = new Employee(1, "Иванов Иван Иванович", 1, arr[0]);
-        System.out.println(employeeList[0]);
-        employeeList[1] = new Employee(2, "Степанов Борис Андреевич", 2, arr[1]);
-        System.out.println(employeeList[1]);
-        employeeList[2] = new Employee(3, "Семенов Семен Семенович", 3, arr[2]);
-        System.out.println(employeeList[2]);
-        System.out.println(Arrays.toString(arr));
-        checkSpending();
+        Employee[] employeeList = new Employee[]{
+                new Employee("employee1", 1, 20000),
+                new Employee("employee2", 2, 25000),
+                new Employee("employee3", 3, 32452),
+                new Employee("employee4", 4, 63242),
+                new Employee("employee5", 5, 72421),
+                new Employee("employee6", 1, 82344),
+                new Employee("employee7", 2, 32245),
+                new Employee("employee8", 3, 35323),
+                new Employee("employee9", 4, 15653),
+                new Employee("employee10", 5, 23245)
+        };
+        printAll(employeeList);
         printSeparator();
-        minMaxSpending();
+        System.out.println("Сумма затрат на зарплату в месяц = " + checkSpending(employeeList));
         printSeparator();
-        averageSpending();
+        System.out.println("Сотрудник с минимальной зарплатой = " + minSpending(employeeList));
         printSeparator();
+        System.out.println("Сотрудник с максимальной зарплатой = " + maxSpending(employeeList));
+        printSeparator();
+        System.out.println("Средняя зарплата = " + averageSpending(employeeList));
+        printSeparator();
+        printAllEmployees(employeeList);
     }
-    public static int[] generateRandomArray() {
-        java.util.Random random = new java.util.Random();
-        int[] arr = new int[3];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(30_000) + 40_000;
+
+    public static void printAll(Employee[] employeeList) {
+        for (Employee e: employeeList) {
+            System.out.println(e);
         }
-        return arr;
     }
-    private static void checkSpending() {
-        int [] arr = generateRandomArray();
+
+
+    public static int checkSpending(Employee[] employeeList) {
         int sum = 0;
-        for (int element:arr) {
-            sum += element;
+        for (Employee e : employeeList) {
+            sum += e.getSalary();
         }
-        System.out.println(String.format("Сумма трат за месяц составила %s рублей", sum));
+        return sum;
     }
-    private static void minMaxSpending() {
-        int[] arr = generateRandomArray();
-        int minSpending = arr[0];
-        int maxSpending = arr[0];
-        for (int i: arr) {
-            if (i<minSpending){
-                minSpending = i;
-            } if (i>maxSpending){
-                maxSpending = i;
+    public static Employee minSpending(Employee[] employeeList) {
+        Employee minSpending = employeeList[0];
+        for (Employee e : employeeList) {
+            if (e.getSalary() < minSpending.getSalary()) {
+                minSpending = e;
             }
         }
-        System.out.println(String.format("Минимальная сумма зарплаты составила %s рублей. Максимальная зарплата составила %s рублей", minSpending, maxSpending));
+        return minSpending;
+    }
+    public static Employee maxSpending(Employee[] employeeList) {
+        Employee maxSpending = employeeList[0];
+        for (Employee e: employeeList) {
+            if (e.getSalary() > maxSpending.getSalary()) {
+                maxSpending = e;
+            }
+        }
+        return maxSpending;
+    }
+    public static double averageSpending(Employee[] employeeList) {
+        return (double) checkSpending(employeeList) / employeeList.length;
     }
 
-    private static void averageSpending() {
-        int [] arr = generateRandomArray();
-        int sum = 0;
-        for (int element: arr) {
-            sum += element;
+    public static void printAllEmployees(Employee[] employeeList) {
+        for (Employee e : employeeList) {
+            System.out.println(e.getFullName());
         }
-        int salary = arr.length;
-        double averageSpending = (double) sum / salary;
-        System.out.println(String.format("Средняя зарплата составила %s рублей", averageSpending));
     }
     public static void printSeparator() {
         System.out.println("====================");

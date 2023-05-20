@@ -1,28 +1,23 @@
 public class Employee {
-    private final String employeeFullName;
+    private final String FullName;
     private int department;
     private int salary;
     private static int counter = 1;
     private final int id;
 
-    public Employee( int id, String employeeFullName, int department, int salary) {
-        this.employeeFullName = employeeFullName;
+    public Employee(String FullName, int department, int salary) {
+        this.FullName = FullName;
         this.department = department;
         this.salary = salary;
-        this.id = getCounter();
-        counter++;
+        this.id = counter++;
     }
 
-    public String getEmployeeFullName() {
-        return employeeFullName;
+    public String getFullName() {
+        return FullName;
     }
 
     public int getDepartment() {
         return department;
-    }
-
-    public static int getCounter() {
-        return counter;
     }
 
     public int getId() {
@@ -44,7 +39,7 @@ public class Employee {
     @Override
     public String toString() {
         return "id = " + id +
-                ", ФИО сотрудника ='" + employeeFullName + '\'' +
+                ", ФИО сотрудника ='" + FullName + '\'' +
                 ", зарплата = " + salary +
                 ", Отдел = " + department;
     }
