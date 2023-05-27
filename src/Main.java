@@ -12,5 +12,9 @@ public class Main {
         System.out.println("Средняя зарплата = " + employeeBook.averageSpending());
         employeeBook.printSeparator();
         employeeBook.printAllEmployees();
+        employeeBook.printSeparator();
+        System.out.println("employeeBook.getMaxSalaryInDepartment(2) = " + employeeBook.getMaxSalaryInDepartment(2));
+        System.out.println("employeeBook.getMinSalaryInDepartment(2) = " + employeeBook.getMinSalaryInDepartment(2));
+        employeeBook.printSeparator();
     }
 }

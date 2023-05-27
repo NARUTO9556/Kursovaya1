@@ -23,6 +23,13 @@ public class EmployeeBook {
         }
         return sum;
     }
+
+    public void indexSalary() {
+        double index = 1.084;
+        for (int i = 0; i < employeeList.length; i++) {
+
+        }
+    }
     public Employee minSpending() {
         Employee minSpending = employeeList[0];
         for (Employee e : employeeList) {
@@ -50,11 +57,14 @@ public class EmployeeBook {
         }
     }
 
-    public Employee getCheckSpendingInDepartment(int department) {
-        Employee checkSpending = null;
-        Employee sum = checkSpending;
-        return checkSpending;
-    }
+//    public Employee checkSpendingInDepartment(int department) {
+//        Employee checkSpending = null;
+//        for (Employee e : employeeList) {
+//            if (e.getDepartment() == department
+//                    && )
+//        }
+//        return checkSpending;
+//    }
     public Employee getMaxSalaryInDepartment(int department) {
         Employee employeeWithMaxSalary = null;
         for (Employee e : employeeList) {
@@ -76,8 +86,8 @@ public class EmployeeBook {
         return employeeWithMinSalary;
     }
 
-//    public Employee getAvgSalaryInDepartment(int department) {
-//        return ;
+//    public Employee getAvgSalaryInDepartment() {
+//
 //    }
     public void printSeparator() {
         System.out.println("====================");
