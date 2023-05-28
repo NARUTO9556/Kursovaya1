@@ -1,11 +1,11 @@
 public class Employee {
     private final String FullName;
     private int department;
-    private int salary;
+    private double salary;
     private static int counter = 1;
     private final int id;
 
-    public Employee(String FullName, int department, int salary) {
+    public Employee(String FullName, int department, double salary) {
         this.FullName = FullName;
         this.department = department;
         this.salary = salary;
@@ -24,7 +24,7 @@ public class Employee {
         return id;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
