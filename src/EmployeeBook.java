@@ -23,13 +23,6 @@ public class EmployeeBook {
         }
         return sum;
     }
-
-    public void indexSalary() {
-        double index = 1.084;
-        for (int i = 0; i < employeeList.length; i++) {
-
-        }
-    }
     public Employee minSpending() {
         Employee minSpending = employeeList[0];
         for (Employee e : employeeList) {
