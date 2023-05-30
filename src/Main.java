@@ -19,7 +19,7 @@ public class Main {
         employeeBook.printAll();
         employeeBook.printSeparator();
         int department = 2;
-        System.out.println("Максимальная зарплата в отделе " + department + "= " + employeeBook.getMaxSalaryInDepartment(department));
+        System.out.println("Максимальная зарплата в отделе " + department + " = " + employeeBook.getMaxSalaryInDepartment(department));
         System.out.println("Минимальная зарплата в отделе " + department + " = " + employeeBook.getMinSalaryInDepartment(department));
         System.out.println("Средняя зарплата в отделе " + department + " = " + employeeBook.getAvgSalaryInDepartment(department));
         System.out.println("Траты на отдел " + department + " = " + employeeBook.checkSpendingInDepartment(department));

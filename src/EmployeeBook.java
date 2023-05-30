@@ -50,18 +50,18 @@ public class EmployeeBook {
         }
     }
     public void getSalaryAllEmployees(double percentage) {
-        for (Employee employee : employeeList) {
-            if (employee != null) {
-                double newSalary = employee.getSalary() * (1 + percentage / 100);
-                employee.setSalary((int) newSalary);
+        for (Employee e : employeeList) {
+            if (e != null) {
+                double newSalary = e.getSalary() * (1 + percentage / 100);
+                e.setSalary((int) newSalary);
             }
         }
     }
     public double checkSpendingInDepartment(int department) {
         double checkSpending = 0;
-        for (Employee employee : employeeList) {
-            if (employee != null && employee.getDepartment() == department) {
-                checkSpending += employee.getSalary();
+        for (Employee e : employeeList) {
+            if (e != null && e.getDepartment() == department) {
+                checkSpending += e.getSalary();
             }
         }
         return checkSpending;
@@ -98,32 +98,32 @@ public class EmployeeBook {
         return totalSalary / count;
     }
     public void getSalaryByDepartment(int department, double percentage) {
-        for (Employee employee : employeeList) {
-            if (employee != null && employee.getDepartment() == department) {
-                double newSalary = employee.getSalary() * (1 + percentage / 100);
-                employee.setSalary((int) newSalary);
+        for (Employee e : employeeList) {
+            if (e != null && e.getDepartment() == department) {
+                double newSalary = e.getSalary() * (1 + percentage / 100);
+                e.setSalary((int) newSalary);
             }
         }
     }
     public void printEmployeesByDepartment(int department) {
-        for (Employee employee : employeeList) {
-            if (employee != null && employee.getDepartment() == department) {
-                System.out.println(employee.toString());
+        for (Employee e : employeeList) {
+            if (e != null && e.getDepartment() == department) {
+                System.out.println(e.toString());
             }
         }
     }
     public void printEmployeesWithSalaryLessThan(double amount) {
-        for (Employee employee : employeeList) {
-            if (employee != null && employee.getSalary() < amount) {
-                System.out.println("ID: " + employee.getId() + ", ФИО: " + employee.getFullName() + ", Зарплата: " + employee.getSalary());
+        for (Employee e : employeeList) {
+            if (e != null && e.getSalary() < amount) {
+                System.out.println("ID: " + e.getId() + ", ФИО: " + e.getFullName() + ", Зарплата: " + e.getSalary());
             }
         }
     }
 
     public void printEmployeesWithSalaryGreaterThanEqual(double amount) {
-        for (Employee employee : employeeList) {
-            if (employee != null && employee.getSalary() >= amount) {
-                System.out.println("ID: " + employee.getId() + ", ФИО: " + employee.getFullName() + ", Зарплата: " + employee.getSalary());
+        for (Employee e : employeeList) {
+            if (e != null && e.getSalary() >= amount) {
+                System.out.println("ID: " + e.getId() + ", ФИО: " + e.getFullName() + ", Зарплата: " + e.getSalary());
             }
         }
     }
