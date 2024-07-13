@@ -36,6 +36,10 @@ public class Employee {
         this.department = department;
     }
 
+    public int getCounter() {
+        return counter;
+    }
+
     @Override
     public String toString() {
         return "id = " + id +
